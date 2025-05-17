@@ -25,8 +25,3 @@ Uses Docker Engine to build and run containers
 +----------------+    +----------------+
 | Docker Images  |    | Docker Containers |
 +----------------+    +----------------+
-🔄 Docker Lifecycle Flow:
-plaintext
-Copy
-Edit
-Dockerfile → docker build → Docker Image → docker run → Docker Container
