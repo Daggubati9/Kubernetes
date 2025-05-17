@@ -48,15 +48,15 @@ A container is a lightweight, standalone, executable package that includes every
 
 ## 🧰 Container Structure:
 
-+-----------------------------+
-| Application Code            |
-+-----------------------------+
-| Dependencies (Libs/Tools)   |
-+-----------------------------+
-| Container Runtime (Docker)  |
-+-----------------------------+
-| Host OS Kernel              |
-+-----------------------------+
+            +-----------------------------+
+            | Application Code            |
+            +-----------------------------+
+            | Dependencies (Libs/Tools)   |
+            +-----------------------------+
+            | Container Runtime (Docker)  |
+            +-----------------------------+
+            | Host OS Kernel              |
+            +-----------------------------+
 
 ## 3. Virtual Machine (VM)
 
@@ -66,17 +66,17 @@ A virtual machine is a software emulation of a physical computer. It runs an ope
 
 ## 🧱 VM Structure:
 
-+----------------------+
-| Guest OS             |
-+----------------------+
-| Virtual Hardware     |
-+----------------------+
-| Hypervisor           |
-+----------------------+
-| Host OS              |
-+----------------------+
-| Physical Hardware    |
-+----------------------+
+            +----------------------+
+            | Guest OS             |
+            +----------------------+
+            | Virtual Hardware     |
+            +----------------------+
+            | Hypervisor           |
+            +----------------------+
+            | Host OS              |
+            +----------------------+
+            | Physical Hardware    |
+            +----------------------+
 
 ## 🔄 VM Flow:
 
