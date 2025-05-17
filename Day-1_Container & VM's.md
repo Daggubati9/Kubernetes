@@ -105,15 +105,6 @@ Great for microservices and CI/CD pipelines
 ## 🧠 Definition:
 Docker is an open-source platform used to automate the deployment, scaling, and management of applications using containers. Docker is a set of platform as a service (PaaS) products that use OS-level virtualization to deliver software in packages called containers. Docker helps you build, ship, and run applications in a lightweight, consistent, and repeatable way. Docker uses containers to make software portable and consistent.
 
-## 🛠 Key Features:
-Lightweight
-
-Portable
-
-Uses a layered file system (UnionFS)
-
-Uses Docker Engine to build and run containers
-
 ## 📦 Docker Architecture:
 
             +-------------------------+
@@ -150,11 +141,11 @@ Step-by-step:
 
 ## 1. Write Dockerfile
 
-FROM python:3.8
-COPY . /app
-WORKDIR /app
-RUN pip install -r requirements.txt
-CMD ["python", "app.py"]
+            FROM python:3.8
+            COPY . /app
+            WORKDIR /app
+            RUN pip install -r requirements.txt
+            CMD ["python", "app.py"]
 
 ## 2. Build Image
 
