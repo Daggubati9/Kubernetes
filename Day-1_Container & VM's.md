@@ -46,19 +46,19 @@ A container is a lightweight, standalone, executable package that includes every
 
 ## ❓ What are Containers:
 
-Lightweight environments to run applications
-
-Share the host OS kernel (no need for a full OS inside)
+            Lightweight environments to run applications
+            
+            Share the host OS kernel (no need for a full OS inside)
 
 ## 🛠 How are Containers Useful:
 
-Fast startup (in seconds)
-
-Low overhead (small size)
-
-Easy to scale and isolate services
-
-Great for microservices and CI/CD pipelines
+            Fast startup (in seconds)
+            
+            Low overhead (small size)
+            
+            Easy to scale and isolate services
+            
+            Great for microservices and CI/CD pipelines
 
 ## 🔄 How are Containers Different from VMs:
 
@@ -121,11 +121,11 @@ Docker is an open-source platform used to automate the deployment, scaling, and 
 
 ## 🔄 Docker Lifecycle Flow:
 
-Dockerfile → docker build → Docker Image → docker run → Docker Container
+            Dockerfile → docker build → Docker Image → docker run → Docker Container
 
 ## ✅ How to Run a Docker Container:
 
-docker run hello-world
+            docker run hello-world
 
 -> Pulls the image if not present
 
@@ -133,7 +133,7 @@ docker run hello-world
 
 ## ✅ How to Run a Custom Container (e.g., Flask app):
 
-docker run -p 5000:5000 daggubati9/myapp
+            docker run -p 5000:5000 daggubati9/myapp
 
 ## ✅ How to Create a Container
 
@@ -149,13 +149,13 @@ Step-by-step:
 
 ## 2. Build Image
 
-docker build -t my-flask-app .
+            docker build -t my-flask-app .
 
 ## 3. Run Container
 
-docker run -p 5000:5000 my-flask-app
+            docker run -p 5000:5000 my-flask-app
 
 ## 🛠 Docker Flowchart:
 
-Source Code → Dockerfile → docker build → Docker Image → docker run → Container
+            Source Code → Dockerfile → docker build → Docker Image → docker run → Container
 
