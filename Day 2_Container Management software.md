@@ -8,5 +8,6 @@
 
 The smallest deployable unit in Kubernetes. A Pod can have one or more tightly coupled containers. Containers in a Pod share storage, network, and lifecycle.
 
-  kubectl get pods
-  kubectl describe pod <pod-name>
+    kubectl get pods
+    
+    kubectl describe pod <pod-name>
