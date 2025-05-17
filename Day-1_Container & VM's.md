@@ -20,13 +20,13 @@ A virtual machine is a software emulation of a physical computer. It runs an ope
 
 ## 🔄 VM Flow:
 
-Create VM → Install OS → Deploy App
+            Create VM → Install OS → Deploy App
 
 ## 👎 Drawbacks (compared to containers):
 
-Heavy
-
-Slower startup
+            Heavy
+            
+            Slower startup
 
 ## 2. Container
 
@@ -36,11 +36,11 @@ A container is a lightweight, standalone, executable package that includes every
 
 ## 🔑 Key Points:
 
-Portable – Run the same container anywhere: dev, test, prod.
-
-Layered – Containers are made of image layers stacked on top of each other.
-
-Base OS image – The bottom-most layer is often a minimal OS like Alpine, Ubuntu, or Debian.
+            Portable – Run the same container anywhere: dev, test, prod.
+            
+            Layered – Containers are made of image layers stacked on top of each other.
+            
+            Base OS image – The bottom-most layer is often a minimal OS like Alpine, Ubuntu, or Debian.
 
 ## ⚖️ Containers vs Virtual Machines:
 
