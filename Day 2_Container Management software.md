@@ -108,3 +108,74 @@ Terminal-based UI to view and manage Kubernetes clusters easily. Gives a real-ti
     
 Example:
 
+## 1. 🟢 Start Minikube
+
+    minikube start
+
+  What it does:
+  
+  Launches a local Kubernetes cluster using a virtual machine.
+  
+  Starts all master components (API server, controller, scheduler, etcd) and at least one node.
+
+## 2. 🚀 Deploy an App
+
+  kubectl create deployment demo-app --image=nginx
+  
+  What it does:
+  
+  Creates a Deployment named demo-app.
+  
+  Uses the nginx container image.
+  
+  Manages a ReplicaSet that maintains 1 Pod running the NGINX web server by default.
+
+## 3. 📈 Scale the App
+
+  kubectl scale deployment demo-app --replicas=3
+  
+  What it does:
+  
+  Tells the Deployment to maintain 3 Pods instead of 1.
+  
+  Kubernetes will automatically create 2 more Pods using the same image and configuration.
+
+## 4. 🌐 Expose the App
+
+    kubectl expose deployment demo-app --type=NodePort --port=80
+    minikube service demo-app
+    
+  What it does:
+  
+  Creates a Service of type NodePort, exposing the app on a static port on the node.
+  
+  minikube service demo-app opens the service URL in your browser or returns the URL to access the app externally.
+
+## Result: 🧭 View System Information
+
+    kubectl get nodes
+    
+  Shows the node(s) in the cluster (just one node in Minikube).
+
+    kubectl get services
+    
+  Lists services in the default namespace, including demo-app.
+
+    kubectl get pods -n kube-system
+    
+  Shows system-level pods that run Kubernetes internals (DNS, dashboard, controller, etc).
+
+    k9s
+    
+  Launches a terminal UI to visually monitor and interact with:
+  
+  Pods
+  
+  Services
+  
+  Deployments
+  
+  Logs
+  
+  And more
+
