@@ -159,7 +159,7 @@ Step-by-step:
 
             Source Code → Dockerfile → docker build → Docker Image → docker run → Container
 
-## 🔹 Run a Docker Container using Apache web Server:
+## 🔹 Example: Run a Docker Container using Apache web Server:
             
 ## 🔹 1. View Running Containers
 
@@ -188,7 +188,103 @@ Step-by-step:
             
             Say: “This shows the default Apache web page. It works!”
 
-## 🔹 3. Executing Inside a Running Container
+## Docker Image:-
+
+## What is the Difference Between a Container and an Image:
+
+            A Docker image is like a blueprint or a recipe. It has all the instructions and files needed to create a running system. It’s read-only and doesn't change.
+            
+            A container, on the other hand, is the running version of that image. When we run the image, it becomes a live, working container.
+            
+            Think of it like baking a cake:
+            
+            The image is the recipe (how to make the cake).
+            
+            The container is the actual cake (the result of following the recipe).
+            
+            We can run multiple containers from the same image, just like we can bake multiple cakes from the same recipe.”
+            
+            
+## Class and Object Difference
+
+            “The difference between image and container is very similar to the difference between a class and an object in programming.
+            
+            A class is just a definition—it tells us what an object should look like.
+            
+            An object is the actual instance created from that class.
+            
+            Similarly:
+            
+            A Docker image is like a class—just a definition or blueprint.
+            
+            A container is like an object—an actual running instance based on that image.”
+
+## ✅ Docker Image and Container Flow:-
+
+            [Create HTML File (mydata.html)]
+                          |
+                          v
+            [Create Dockerfile]
+               (Specify base image and COPY command)
+                          |
+                          v
+            [Build Docker Image]
+               docker build -t myhttpd:1.0 .
+                          |
+                          v
+            [Run Docker Container]
+               docker run -it -p 8089:80 myhttpd:1.0
+                          |
+                          v
+            [Access Website]
+               Open browser → http://localhost:8089
+                          |
+                          v
+            [Exec into Container (optional)]
+               docker ps
+               docker exec -it <container_id> bash
+                          |
+                          v
+            [Check Directory/Logs]
+               cd /usr/local/apache2/htdocs/
+               ls
+               docker logs <container_id> -f
+                          |
+                          v
+            [Stop Container (optional)]
+               kill <PID>  (or) docker stop <container_id>
+
+
+## Example: How to Build a Docker Image:
+
+To build a Docker image, we follow a few simple steps. First, we create the files we want inside the container—like an HTML file for a website. Next, we write a special instruction file called a Dockerfile. This file tells Docker what base image to use and what files to copy inside.
+
+ ## 🔹 1. Create a New HTML Page
+
+            echo "My data" > mydata.html
+            
+            ✅ Use: Creates a file inside the container’s file system
+            
+            ✅ Demo Step:
+            
+            Create the file inside /usr/local/apache2/htdocs/
+            
+## 🔹 2. Create Dockerfile
+
+            FROM httpd:latest
+            COPY mydata.html /usr/local/apache2/htdocs/
+
+## 🔹 3. Then, I build the image using this command:
+
+            docker build -t myhttpd:1.0 .
+
+## 🔹 4. Finally, I run the container from that image:
+
+            docker run -it -p 8089:80 myhttpd:1.0
+            
+            This will run the Apache server and show my web page when I go to http://localhost:8089.”
+
+## sample commands Executing Inside a Running Container
 
             docker exec -it <container_id> bash
             
@@ -200,19 +296,8 @@ Step-by-step:
             
             Then ls to list files like index.html
 
-## 🔹 4. Create a New HTML Page
 
-            echo "My data" > mydata.html
-            
-            ✅ Use: Creates a file inside the container’s file system
-            
-            ✅ Demo Step:
-            
-            Create the file inside /usr/local/apache2/htdocs/
-            
-            Access via: http://localhost:8089/mydata.html
-
-## 🔹 5. Update Package Lists (Debian/Ubuntu containers)
+## 🔹 Update Package Lists (Debian/Ubuntu containers)
 
             apt update
             
@@ -222,13 +307,13 @@ Step-by-step:
             
             ✅ Use: Installs ps command (used for process listing)
 
-## 🔹 6. List Running Processes Inside Container
+## 🔹 List Running Processes Inside Container
 
             ps -aef
             
             ✅ Use: Shows detailed process list
 
-## 🔹 7. Kill a Running Container
+## 🔹 Kill a Running Container
 
             kill 1
             ✅ Use:
@@ -240,7 +325,7 @@ Step-by-step:
             
             After kill 1, refresh the browser → it should give a server error
 
-## 🔹 8. View Logs of a Container
+## 🔹 View Logs of a Container
 
             docker logs <container_id>
             
@@ -255,4 +340,5 @@ Step-by-step:
             Show how logs appear
             
             Use -f to simulate real-time monitoring
+
 
