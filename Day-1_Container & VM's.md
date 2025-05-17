@@ -159,3 +159,114 @@ Step-by-step:
 
             Source Code → Dockerfile → docker build → Docker Image → docker run → Container
 
+## Run a Docker Container using web Server:
+            
+## 🔹 1. View Running Containers
+
+            docker ps
+            
+            ✅ Use: Lists all currently running containers
+            
+            ✅ Demo Step:
+            
+            Run this after starting a container to get its Container ID
+            
+            Show columns like container ID, image name, port mappings, status, etc.
+
+🔹 2. Run an HTTPD Container with Port Mapping
+bash
+Copy
+Edit
+docker run -it -P 8089:80 httpd
+✅ Use:
+
+Runs an Apache web server (httpd image)
+
+Maps host port 8089 → container port 80
+
+✅ Demo Step:
+
+After running, visit http://localhost:8089
+
+Say: “This shows the default Apache web page. It works!”
+
+🔹 3. Executing Inside a Running Container
+bash
+Copy
+Edit
+docker exec -it <container_id> bash
+✅ Use: Opens a bash shell inside the container
+✅ Demo Step:
+
+Run pwd, ls, and cd htdocs/
+
+Then ls to list files like index.html
+
+🔹 4. Create a New HTML Page
+bash
+Copy
+Edit
+echo "My data" > mydata.html
+✅ Use: Creates a file inside the container’s file system
+✅ Demo Step:
+
+Create the file inside /usr/local/apache2/htdocs/
+
+Access via: http://localhost:8089/mydata.html
+
+🔹 5. Update Package Lists (Debian/Ubuntu containers)
+bash
+Copy
+Edit
+apt update
+✅ Use: Refreshes package list in Debian-based containers
+
+bash
+Copy
+Edit
+apt install -y procps
+✅ Use: Installs ps command (used for process listing)
+
+🔹 6. List Running Processes Inside Container
+bash
+Copy
+Edit
+ps -aef
+✅ Use: Shows detailed process list
+
+🔹 7. Kill a Running Container
+bash
+Copy
+Edit
+kill 1
+✅ Use:
+
+PID 1 is usually the main process in the container
+
+Killing it stops the container
+✅ Demo Step:
+
+After kill 1, refresh the browser → it should give a server error
+
+🔹 8. View Logs of a Container
+bash
+Copy
+Edit
+docker logs <container_id>
+Extra Options:
+
+bash
+Copy
+Edit
+docker logs -f <container_id>     # Follow logs in real-time
+docker logs -c <container_id>     # (typo in note) -c is not valid for logs
+✅ Demo Step:
+
+Show how logs appear
+
+Use -f to simulate real-time monitoring
+
+🎤 Suggested Script Flow for Your Demo
+“Let me show you how to run an Apache web server using Docker.”
+
+Run the container and visit the browser → show default page.
