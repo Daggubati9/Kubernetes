@@ -57,7 +57,7 @@ A group of nodes managed by Kubernetes. One control plane (master), many worker 
 
     kubectl get pods -n kube-system
     
-##6. 🚀 Deployment
+## 6. 🚀 Deployment
 
 A Kubernetes object that manages Pods — ensuring the correct number of replicas and enabling rolling updates. Helps manage application versioning and scaling.
 
@@ -104,4 +104,4 @@ Logical separation in a Kubernetes cluster (like folders). Organizes and isolate
 
 Terminal-based UI to view and manage Kubernetes clusters easily. Gives a real-time overview of pods, deployments, services, logs, etc.
 
-  k9s
+    k9s
