@@ -71,3 +71,70 @@ streams the logs in real time from the apache container in the web-app-7f5c67d78
 
 allows you to open an interactive shell (bash) inside the apache container of the web-app-7f5c67d78d-nghtk pod.
 
+## ✅ docker volume ls
+
+       Purpose: Lists all Docker volumes.
+       
+       Use Case: Check existing volumes used for persistent storage in containers.
+
+## ✅ docker stack ls
+
+       Purpose: Lists all the deployed stacks in Docker Swarm.
+       
+       Use Case: Useful to see which stack-based applications are currently running.
+
+## ✅ docker service ls
+
+       Purpose: Lists all the services running in Docker Swarm mode.
+       
+       Use Case: Shows you services under each stack (name, replicas, image, etc.).
+
+## ✅ docker kill <container_id or name>
+
+       Purpose: Forcefully stops and removes the specified container.
+       
+       Example: docker kill jenkins
+
+## ✅ docker ps
+
+       Purpose: Lists all the running containers.
+       
+       Use Case: To check the status, container IDs, names, images, etc.
+
+## ✅ docker swarm init
+
+       Purpose: Initializes the current Docker engine as a manager node in Swarm.
+       
+       Use Case: Step one for setting up Docker Swarm.
+
+## ✅ docker swarm
+
+       Purpose: Displays help and available subcommands for Docker Swarm.
+       
+       Use Case: To explore what can be done under Swarm mode.
+
+## ✅ docker node ls
+
+       Purpose: Lists all nodes in the Swarm (only visible from the manager node).
+       
+       Use Case: Helps monitor and manage the cluster.
+
+## ✅ docker swarm join-token
+
+       Purpose: Generates a command to join a new node to the Swarm.
+       
+       Example: docker swarm join-token worker or manager
+
+## ✅ docker swarm join-token --help
+
+       Purpose: Displays help for the join-token command.
+
+## ✅ docker swarm join-token worker
+
+       Purpose: Shows the token and command needed to join a node as a worker to the swarm.
+
+## ✅ docker stack deploy -c <path> <stack_name>
+
+       Purpose: Deploys a stack defined in a docker-compose.yml file to the Swarm.
+       
+       Example: docker stack deploy -c docker-compose.yml mystack
