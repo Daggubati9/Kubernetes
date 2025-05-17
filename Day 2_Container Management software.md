@@ -179,3 +179,7 @@ Example:
   
   And more
 
+## Ingress Controller:-
+
+An Ingress Controller is a Kubernetes resource that manages external access (usually HTTP/HTTPS) to services within a cluster. It routes incoming traffic to different backend services based on rules defined in Ingress resources.
+
