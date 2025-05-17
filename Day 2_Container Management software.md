@@ -105,3 +105,6 @@ Logical separation in a Kubernetes cluster (like folders). Organizes and isolate
 Terminal-based UI to view and manage Kubernetes clusters easily. Gives a real-time overview of pods, deployments, services, logs, etc.
 
     k9s
+    
+Example:
+
