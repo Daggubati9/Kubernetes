@@ -24,104 +24,84 @@ A physical or virtual machine where Pods run. Nodes are the underlying compute r
     
     kubectl describe node <node-name>
     
-4. 🧱 Node Pool
-What: A group of nodes with the same configuration (used mostly in cloud Kubernetes).
-Why: Helps manage scaling and types of workloads.
-Note: Not directly visible in Minikube, but can be discussed theoretically.
+## 3. 🧱 Node Pool
 
-5. 🌐 Cluster
-What: A group of nodes managed by Kubernetes. One control plane (master), many worker nodes.
-Why: Makes the deployment scalable, reliable, and manageable.
-Demo:
+A group of nodes with the same configuration (used mostly in cloud Kubernetes). Helps manage scaling and types of workloads.
+Not directly visible in Minikube, but can be discussed theoretically.
 
-bash
-Copy
-Edit
-kubectl cluster-info
-6. 🧩 Kubernetes Components
-🔧 Master Service Components:
-API Server: Front door of Kubernetes.
+## 4. 🌐 Cluster
 
-Scheduler: Decides which node runs which Pod.
+A group of nodes managed by Kubernetes. One control plane (master), many worker nodes. Makes the deployment scalable, reliable, and manageable.
 
-Controller Manager: Watches and maintains cluster state.
+    kubectl cluster-info
+    
+## 5. 🧩 Kubernetes Components
 
-etcd: Key-value store for config and cluster data.
+## 🔧 Master Service Components:
 
-⚙️ Workload Components (on Worker Nodes):
-Kubelet: Talks to the API Server and runs containers.
+    API Server: Front door of Kubernetes.
+    
+    Scheduler: Decides which node runs which Pod.
+    
+    Controller Manager: Watches and maintains cluster state.
+    
+    etcd: Key-value store for config and cluster data.
 
-Kube-proxy: Handles networking.
+## ⚙️ Workload Components (on Worker Nodes):
 
-Container Runtime: Docker, containerd, etc.
+    Kubelet: Talks to the API Server and runs containers.
+    
+    Kube-proxy: Handles networking.
+    
+    Container Runtime: Docker, containerd, etc.
 
-📌 Demo command (see system pods):
+    kubectl get pods -n kube-system
+    
+##6. 🚀 Deployment
 
-bash
-Copy
-Edit
-kubectl get pods -n kube-system
-7. 🚀 Deployment
-What: A Kubernetes object that manages Pods — ensuring the correct number of replicas and enabling rolling updates.
-Why: Helps manage application versioning and scaling.
-Demo:
+A Kubernetes object that manages Pods — ensuring the correct number of replicas and enabling rolling updates. Helps manage application versioning and scaling.
 
-bash
-Copy
-Edit
-kubectl create deployment nginx-deploy --image=nginx
-kubectl get deployments
-kubectl scale deployment nginx-deploy --replicas=3
-8. 🌉 Service
-What: A stable way to access a group of Pods.
+    kubectl create deployment nginx-deploy --image=nginx
+    kubectl get deployments
+    kubectl scale deployment nginx-deploy --replicas=3
+    
+## 7. 🌉 Service
 
-ClusterIP: Internal.
+A stable way to access a group of Pods. Pods have dynamic IPs; services provide stable access.
 
-NodePort: Accessible via node’s IP and port.
+  ClusterIP: Internal.
+  
+  NodePort: Accessible via node’s IP and port.
+  
+  LoadBalancer: External traffic (cloud).
 
-LoadBalancer: External traffic (cloud).
+    kubectl expose deployment nginx-deploy --type=NodePort --port=80
+    minikube service nginx-deploy
+    
+## 8. 🌐 Ingress
 
-Why: Pods have dynamic IPs; services provide stable access.
-Demo:
+A controller that routes external traffic to services using HTTP/HTTPS paths. Reduces the need for many NodePorts or LoadBalancers.
+Ingress requires setup a YAML file.
 
-bash
-Copy
-Edit
-kubectl expose deployment nginx-deploy --type=NodePort --port=80
-minikube service nginx-deploy
-9. 🌐 Ingress
-What: A controller that routes external traffic to services using HTTP/HTTPS paths.
-Why: Reduces the need for many NodePorts or LoadBalancers.
-Demo Tip: Mention that it requires setup; show a sample YAML.
+## 9. 📤 Egress
 
-10. 📤 Egress
-What: Outbound traffic from Pods (e.g., calling external APIs).
-Why: Useful for internet access, security policies.
-Note: Not a visible object like Service/Ingress.
+Outbound traffic from Pods (e.g., calling external APIs). Useful for internet access, security policies. Not a visible object like Service/Ingress.
 
-11. 🗂️ Namespace
-What: Logical separation in a Kubernetes cluster (like folders).
+## 10. 🗂️ Namespace
 
-default
+Logical separation in a Kubernetes cluster (like folders). Organizes and isolates resources.
 
-kube-system
+  default
+  
+  kube-system
+  
+  dev, prod, etc.
 
-dev, prod, etc.
+  kubectl get namespaces
+  kubectl get pods --namespace=kube-system
+  
+## 11. 📺 K9s
 
-Why: Organizes and isolates resources.
-Demo:
+Terminal-based UI to view and manage Kubernetes clusters easily. Gives a real-time overview of pods, deployments, services, logs, etc.
 
-bash
-Copy
-Edit
-kubectl get namespaces
-kubectl get pods --namespace=kube-system
-12. 📺 K9s
-What: Terminal-based UI to view and manage Kubernetes clusters easily.
-Why: Gives a real-time overview of pods, deployments, services, logs, etc.
-Demo:
-
-bash
-Copy
-Edit
-k9s
+  k9s
