@@ -15,13 +15,22 @@ Uses Docker Engine to build and run containers
 ## 📦 Docker Architecture:
 
 +-------------------------+
+
 |     Docker CLI/API     |
+
 +-------------------------+
             |
+            
 +-------------------------+
+
 |     Docker Daemon       |
+
 +-------------------------+
+
             |
+            
 +----------------+    +----------------+
+
 | Docker Images  |    | Docker Containers |
+
 +----------------+    +----------------+
