@@ -62,13 +62,13 @@ A container is a lightweight, standalone, executable package that includes every
 
 ## 🔄 How are Containers Different from VMs:
 
-            | Feature        | Containers            | Virtual Machines                  |
-            | -------------- | --------------------- | --------------------------------- |
-            | OS             | Share host OS kernel  | Each has its own OS               |
-            | Size           | MBs                   | GBs                               |
-            | Startup Time   | Seconds               | Minutes                           |
-            | Resource Usage | Low                   | High                              |
-            | Use Case       | Microservices, DevOps | Full OS environments, legacy apps |
+| Feature        | Containers            | Virtual Machines                  |
+| -------------- | --------------------- | --------------------------------- |
+| OS             | Share host OS kernel  | Each has its own OS               |
+| Size           | MBs                   | GBs                               |
+| Startup Time   | Seconds               | Minutes                           |
+| Resource Usage | Low                   | High                              |
+| Use Case       | Microservices, DevOps | Full OS environments, legacy apps |
 
 ## 🧰 Container Structure:
 
