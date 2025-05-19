@@ -2,7 +2,9 @@
 
 ## 🧠 Definition:
 
-A virtual machine is a software emulation of a physical computer. It runs an operating system and applications just like a physical machine.
+            A Virtual Machine is like a computer inside another computer.
+            
+            It has its own operating system, memory, and resources, but it's actually running on top of a physical machine using software called a hypervisor.
 
 ## 🧱 VM Structure:
 
