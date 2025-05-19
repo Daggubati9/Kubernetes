@@ -26,15 +26,24 @@
 
 ## 👎 Drawbacks (compared to containers):
 
-            Heavy
+            Slower to start
             
-            Slower startup
+            Uses more memory (since it includes full OS)
+            
+            Good for running legacy apps or full OS setups
+
 
 ## 2. Container
 
 ## 🧠 Definition:
 
 A container is a lightweight, standalone, executable package that includes everything needed to run a piece of software: code, runtime, system tools, libraries, and settings. A container is a way to package an application with all necessary dependencies and configuration. Containers are isolated, fast, and ideal for DevOps. They differ from VMs by being more efficient and lightweight. we can easily create, build, and run containers using Docker CLI.
+
+“Containers are like lightweight VMs, but without the full OS.”
+
+“They package an application and its dependencies into a small, isolated unit.”
+
+“They are fast, portable, and efficient.”
 
 ## 🔑 Key Points:
 
